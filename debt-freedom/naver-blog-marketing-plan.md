@@ -102,14 +102,32 @@ Debt Freedom의 핵심 가치 제안은 다음과 같다.
 
 ### 3.3 링크 추적
 
-글마다 서로 다른 UTM 파라미터를 사용한다.
+모든 네이버 블로그 글은 일반 랜딩페이지 주소 대신 UTM 파라미터가 포함된 주소를 사용한다. 실제 링크는 줄바꿈 없이 한 줄로 작성한다.
 
 ```text
-?utm_source=naver
-&utm_medium=blog
-&utm_campaign=debt_freedom_launch
-&utm_content=extra_payment_100k
+https://twinlabs.studio/debt-freedom/?utm_source=naver&utm_medium=blog&utm_campaign=debt_freedom_launch&utm_content=extra_payment_100k
 ```
+
+파라미터는 다음 기준으로 관리한다.
+
+| 파라미터 | 고정 여부 | 값 | 용도 |
+|---|---|---|---|
+| `utm_source` | 고정 | `naver` | 유입 플랫폼 |
+| `utm_medium` | 고정 | `blog` | 콘텐츠 채널 |
+| `utm_campaign` | 캠페인별 고정 | `debt_freedom_launch` | 전체 홍보 캠페인 |
+| `utm_content` | 글마다 변경 | 아래 명명 규칙 참고 | 개별 글 구분 |
+
+`utm_content`는 글의 핵심 주제를 영문 소문자와 숫자로 표현하고 단어 사이는 밑줄로 연결한다. 게시일, 작성자 이름, 독자 이름과 같은 개인정보는 넣지 않는다. 값은 대소문자를 구분하므로 동일한 주제에 다른 표기를 섞지 않는다.
+
+| 글 주제 | `utm_content` |
+|---|---|
+| 매달 10만 원 추가 상환 | `extra_payment_100k` |
+| 여러 대출 관리 방법 | `multiple_loans` |
+| 원금균등·원리금균등 비교 | `repayment_methods` |
+| 고금리 대출 우선 상환 | `high_interest_first` |
+| Debt Freedom 사용 방법 | `app_usage_guide` |
+
+새 글을 발행할 때는 기존 링크를 복사한 뒤 `utm_content` 값만 변경한다. 랜딩페이지는 네 가지 UTM 값을 읽어 같은 탭의 세션 동안 보존하므로 이후 앱스토어 클릭 이벤트에서도 유입 글을 구분할 수 있다.
 
 가능하면 AppsFlyer, Adjust 또는 앱스토어 캠페인 링크로 설치까지 측정한다. 설치 추적 도구를 사용하지 못할 경우 최소한 다음 이벤트를 측정한다.
 
