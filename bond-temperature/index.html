@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="국고채 3년과 회사채 AA- 3년 금리를 비교하고, 채권을 계산해 보관하는 채권온도.">
+  <meta name="theme-color" content="#101114">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="채권온도 — 채권의 수익률을 시장과 비교하세요">
+  <meta property="og:description" content="신용스프레드 확인부터 채권 계산과 비교까지, 복잡한 채권 정보를 한 화면에서 이해하세요.">
+  <meta property="og:image" content="https://twinlabs.studio/bond-temperature/assets/app-icon.png">
+  <meta property="og:url" content="https://twinlabs.studio/bond-temperature/">
+  <link rel="canonical" href="https://twinlabs.studio/bond-temperature/">
+  <link rel="icon" href="assets/app-icon.png">
+  <title>채권온도 — 채권의 수익률을 시장과 비교하세요</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --canvas: #101114;
+      --surface: #191b20;
+      --surface-strong: #202329;
+      --amber: #e9b65b;
+      --amber-soft: #f5cd86;
+      --paper: #f5f3ed;
+      --muted: #adaeb5;
+      --line: #34373f;
+      --shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--paper);
+      background: var(--canvas);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+      line-height: 1.65;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    h1, h2, h3, p { margin-top: 0; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+
+    .site-header {
+      position: absolute;
+      z-index: 2;
+      inset: 0 0 auto;
+      padding: 24px 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .brand img { width: 44px; height: 44px; border-radius: 12px; }
+
+    .hero {
+      overflow: hidden;
+      position: relative;
+      min-height: 760px;
+      background:
+        radial-gradient(circle at 75% 28%, rgba(233, 182, 91, 0.19), transparent 30%),
+        linear-gradient(145deg, #101114 8%, #18191d 58%, #241f17);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 280px;
+      right: -150px;
+      bottom: -95px;
+      border: 2px solid rgba(233, 182, 91, 0.17);
+      border-bottom: 0;
+      border-radius: 560px 560px 0 0;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(400px, 0.82fr);
+      gap: 44px;
+      align-items: center;
+      min-height: 760px;
+      padding-top: 122px;
+      padding-bottom: 80px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--amber);
+      font-size: 0.94rem;
+      font-weight: 750;
+      letter-spacing: 0.04em;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; }
+    h1 {
+      max-width: 680px;
+      margin-bottom: 22px;
+      font-size: clamp(2.8rem, 6.8vw, 5.6rem);
+      line-height: 1.06;
+      letter-spacing: -0.06em;
+    }
+    .hero-copy {
+      max-width: 640px;
+      margin-bottom: 26px;
+      color: #d2d1cd;
+      font-size: clamp(1.05rem, 2vw, 1.24rem);
+    }
+    .trust-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      margin: 0 0 30px;
+      padding: 0;
+      color: var(--amber-soft);
+      font-size: 0.94rem;
+      list-style: none;
+    }
+    .trust-line li::before { content: "✓"; margin-right: 7px; font-weight: 800; }
+    .store-button {
+      display: inline-flex;
+      min-height: 58px;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 19px;
+      border: 1px solid #555962;
+      border-radius: 13px;
+      color: var(--paper);
+      background: #08090a;
+      text-decoration: none;
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+    .store-button:hover { transform: translateY(-2px); border-color: var(--amber); }
+    .store-button:focus-visible, footer a:focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
+    .store-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .apple {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border: 2px solid currentColor;
+      border-radius: 9px;
+      font-size: 1.15rem;
+      font-weight: 850;
+      line-height: 1;
+    }
+    .play {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      color: var(--amber);
+      font-size: 1.7rem;
+      line-height: 1;
+    }
+    .store-copy { display: grid; line-height: 1.18; }
+    .store-copy small { color: #c4c5ca; font-size: 0.71rem; }
+    .store-copy strong { font-size: 1.08rem; }
+    .release-note { margin: 10px 0 0; color: var(--muted); font-size: 0.84rem; }
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+      justify-self: center;
+      overflow: hidden;
+      width: min(100%, 530px);
+      aspect-ratio: 3 / 4;
+      border: 1px solid #363941;
+      border-radius: 30px;
+      background: #15171c;
+      filter: drop-shadow(0 36px 48px rgba(0, 0, 0, 0.5));
+      transform: rotate(1deg) translateY(12px);
+    }
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .section { padding: 104px 0; }
+    .section-raised { background: #141519; }
+    .section-heading { max-width: 740px; margin-bottom: 50px; }
+    .section-heading h2 {
+      margin-bottom: 14px;
+      font-size: clamp(2rem, 4.5vw, 3.45rem);
+      line-height: 1.16;
+      letter-spacing: -0.05em;
+    }
+    .section-heading p { margin-bottom: 0; color: var(--muted); font-size: 1.08rem; }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .feature-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--surface);
+    }
+    .feature-number {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      margin-bottom: 24px;
+      place-items: center;
+      border-radius: 14px;
+      color: #17130d;
+      background: var(--amber);
+      font-weight: 850;
+    }
+    .feature-card h3 { margin-bottom: 10px; font-size: 1.32rem; }
+    .feature-card p { margin-bottom: 0; color: var(--muted); }
+
+    .screens { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; }
+    .screen-card {
+      overflow: hidden;
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .screen-card:nth-child(2) { margin-top: 54px; }
+    .screen-card img { width: 100%; height: auto; }
+    .screen-card figcaption { padding: 20px 22px 22px; }
+    .screen-card strong { display: block; margin-bottom: 5px; color: var(--amber-soft); }
+    .screen-card span { color: var(--muted); font-size: 0.94rem; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: var(--surface);
+    }
+    .flow-step { padding: 34px; }
+    .flow-step + .flow-step { border-left: 1px solid var(--line); }
+    .flow-step strong { display: block; margin-bottom: 10px; color: var(--amber); font-size: 0.9rem; }
+    .flow-step h3 { margin-bottom: 8px; font-size: 1.24rem; }
+    .flow-step p { margin-bottom: 0; color: var(--muted); }
+
+    .notice {
+      margin-top: 28px;
+      padding: 24px 28px;
+      border-left: 4px solid var(--amber);
+      border-radius: 4px 18px 18px 4px;
+      color: #c7c8cc;
+      background: var(--surface-strong);
+      font-size: 0.94rem;
+    }
+    .final-cta {
+      padding: 92px 0;
+      text-align: center;
+      background: radial-gradient(circle at 50% 100%, rgba(233, 182, 91, 0.2), transparent 45%), #17181c;
+    }
+    .final-cta h2 { margin-bottom: 14px; font-size: clamp(2.1rem, 4.5vw, 3.5rem); letter-spacing: -0.05em; }
+    .final-cta p { margin-bottom: 28px; color: var(--muted); }
+    footer { padding: 30px 0 42px; color: var(--muted); background: #0c0d0f; font-size: 0.91rem; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; align-items: center; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .footer-links a { color: #d7d5cf; text-underline-offset: 4px; }
+
+    @media (max-width: 820px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 50px; min-height: auto; padding-top: 150px; }
+      .hero-visual { width: min(78%, 360px); }
+      .feature-grid, .screens, .flow { grid-template-columns: 1fr; }
+      .screen-card { width: min(100%, 430px); margin: 0 auto; }
+      .screen-card:nth-child(2) { margin-top: 0; }
+      .flow-step + .flow-step { border-top: 1px solid var(--line); border-left: 0; }
+    }
+    @media (max-width: 520px) {
+      .container { width: min(100% - 28px, 1120px); }
+      .site-header { padding-top: 18px; }
+      .hero-inner { padding-top: 126px; padding-bottom: 64px; }
+      .hero-visual { width: 88%; transform: none; }
+      .section { padding: 74px 0; }
+      .feature-card, .flow-step { padding: 25px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .store-button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="TwinLabs 홈">
+        <img src="assets/app-icon.png" alt="" width="44" height="44">
+        <span>채권온도</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <p class="eyebrow">채권 비교 도구</p>
+          <h1>높은 수익률의 이유를<br>시장과 비교하세요.</h1>
+          <p class="hero-copy">국고채 3년과 회사채 AA- 3년의 차이를 읽고, 증권사에서 발견한 채권을 직접 계산해 보관하고 비교합니다.</p>
+          <ul class="trust-line" aria-label="핵심 특징">
+            <li>회원가입 없음</li>
+            <li>계산 내역은 기기에 저장</li>
+          </ul>
+          <div class="store-links" aria-label="출시 준비 중인 다운로드 경로">
+            <a class="store-button" href="mailto:hello@twinlabs.studio?subject=%5B%EC%B1%84%EA%B6%8C%EC%98%A8%EB%8F%84%5D%20App%20Store%20%EC%B6%9C%EC%8B%9C%20%EC%95%8C%EB%A6%BC" aria-label="채권온도 App Store 출시 알림 문의" data-app-store-url-pending>
+              <span class="apple" aria-hidden="true">A</span>
+              <span class="store-copy"><small>곧 이용 가능</small><strong>App Store 출시 준비 중</strong></span>
+            </a>
+            <a class="store-button" href="mailto:hello@twinlabs.studio?subject=%5B%EC%B1%84%EA%B6%8C%EC%98%A8%EB%8F%84%5D%20Google%20Play%20%EC%B6%9C%EC%8B%9C%20%EC%95%8C%EB%A6%BC" aria-label="채권온도 Google Play 출시 알림 문의" data-google-play-url-pending>
+              <span class="play" aria-hidden="true">▶</span>
+              <span class="store-copy"><small>곧 이용 가능</small><strong>Google Play 출시 준비 중</strong></span>
+            </a>
+          </div>
+          <p class="release-note">출시 후 각 버튼이 App Store와 Google Play 다운로드로 연결됩니다.</p>
+        </div>
+        <figure class="hero-visual">
+          <img src="assets/screenshot-hero-market.png" alt="채권온도 시장 화면. AA- 3년 신용스프레드와 최근 5년 위치를 보여줍니다." width="1179" height="2556">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-raised">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">복잡한 숫자를 비교 기준으로</p>
+          <h2>채권을 발견한 순간부터<br>비교할 때까지.</h2>
+          <p>추천이나 매매 대신, 사용자가 직접 판단할 수 있는 시장 기준과 계산 결과를 제공합니다.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-number">01</div>
+            <h3>시장 온도 확인</h3>
+            <p>AA- 3년 신용스프레드와 최근 5년 내 상대적 위치를 보고 시장이 요구하는 추가금리 수준을 이해합니다.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-number">02</div>
+            <h3>채권 직접 계산</h3>
+            <p>투자금, 수익률, 표면금리와 만기를 입력해 예상 매수가격과 이자 흐름을 계산합니다.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-number">03</div>
+            <h3>저장하고 나란히 비교</h3>
+            <p>계산 결과를 기기에 보관하고 여러 후보의 수익률, 만기와 시장 대비 차이를 한눈에 비교합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">앱 미리보기</p>
+          <h2>판단에 필요한 정보만<br>차분하게 모았습니다.</h2>
+        </div>
+        <div class="screens">
+          <figure class="screen-card">
+            <img src="assets/screenshot-market.png" alt="신용스프레드 게이지와 금리 비교 화면" loading="lazy" width="894" height="1900">
+            <figcaption><strong>시장의 추가금리</strong><span>현재 수준과 5년 상대 위치를 함께 확인합니다.</span></figcaption>
+          </figure>
+          <figure class="screen-card">
+            <img src="assets/screenshot-saved.png" alt="사용자가 계산해 저장한 채권 보관함 화면" loading="lazy" width="894" height="1900">
+            <figcaption><strong>나만의 보관함</strong><span>직접 계산한 후보와 저장 시점을 기기에 남깁니다.</span></figcaption>
+          </figure>
+          <figure class="screen-card">
+            <img src="assets/screenshot-comparison.png" alt="저장한 여러 채권을 비교하는 화면" loading="lazy" width="894" height="1900">
+            <figcaption><strong>후보 비교</strong><span>여러 계산 결과의 차이를 같은 기준으로 살펴봅니다.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-raised">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">간단한 이용 흐름</p>
+          <h2>발견하고, 계산하고, 비교하세요.</h2>
+        </div>
+        <div class="flow">
+          <article class="flow-step"><strong>STEP 1</strong><h3>증권사에서 채권 발견</h3><p>관심 있는 채권의 수익률, 표면금리와 만기 정보를 확인합니다.</p></article>
+          <article class="flow-step"><strong>STEP 2</strong><h3>채권온도에서 계산</h3><p>조건을 입력하고 시장금리와의 차이, 예상 현금흐름을 확인합니다.</p></article>
+          <article class="flow-step"><strong>STEP 3</strong><h3>보관함에서 비교</h3><p>후보를 저장해 두고 두세 개를 선택하여 나란히 비교합니다.</p></article>
+        </div>
+        <p class="notice">채권온도는 정보 제공과 비교를 돕는 보조 도구이며 투자 자문, 매수 추천 또는 원금 보장을 제공하지 않습니다. 실제 거래 전 상품 설명과 증권사 정보를 확인하세요.</p>
+      </div>
+    </section>
+
+    <section class="final-cta" id="download">
+      <div class="container">
+        <h2>수익률을 숫자 하나로만<br>보지 마세요.</h2>
+        <p>채권온도는 App Store와 Google Play 출시를 준비하고 있습니다.</p>
+        <a class="store-button" href="mailto:hello@twinlabs.studio?subject=%5B%EC%B1%84%EA%B6%8C%EC%98%A8%EB%8F%84%5D%20App%20Store%20%EC%B6%9C%EC%8B%9C%20%EC%95%8C%EB%A6%BC" aria-label="채권온도 App Store 출시 알림 문의" data-app-store-url-pending>
+          <span class="apple" aria-hidden="true">A</span>
+          <span class="store-copy"><small>곧 이용 가능</small><strong>App Store 출시 준비 중</strong></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 TwinLabs · 채권온도</span>
+      <nav class="footer-links" aria-label="서비스 문서">
+        <a href="privacy-policy.html">개인정보처리방침</a>
+        <a href="support.html">지원 및 문의</a>
+        <a href="mailto:hello@twinlabs.studio">이메일</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
