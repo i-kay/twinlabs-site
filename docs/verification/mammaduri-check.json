@@ -1,0 +1,68 @@
+{
+  "report": [
+    {
+      "name": "index",
+      "width": 360,
+      "axe": 0,
+      "overflow": false,
+      "firstFocus": "본문으로 건너뛰기"
+    },
+    {
+      "name": "index",
+      "width": 390,
+      "axe": 0,
+      "overflow": false,
+      "firstFocus": "본문으로 건너뛰기"
+    },
+    {
+      "name": "index",
+      "width": 1440,
+      "axe": 0,
+      "overflow": false,
+      "firstFocus": "본문으로 건너뛰기"
+    },
+    {
+      "name": "privacy-policy",
+      "width": 360,
+      "axe": 0,
+      "overflow": false,
+      "firstFocus": "본문으로 건너뛰기"
+    },
+    {
+      "name": "privacy-policy",
+      "width": 390,
+      "axe": 0,
+      "overflow": false,
+      "firstFocus": "본문으로 건너뛰기"
+    },
+    {
+      "name": "privacy-policy",
+      "width": 1440,
+      "axe": 0,
+      "overflow": false,
+      "firstFocus": "본문으로 건너뛰기"
+    },
+    {
+      "name": "support",
+      "width": 360,
+      "axe": 0,
+      "overflow": false,
+      "firstFocus": "본문으로 건너뛰기"
+    },
+    {
+      "name": "support",
+      "width": 390,
+      "axe": 0,
+      "overflow": false,
+      "firstFocus": "본문으로 건너뛰기"
+    },
+    {
+      "name": "support",
+      "width": 1440,
+      "axe": 0,
+      "overflow": false,
+      "firstFocus": "본문으로 건너뛰기"
+    }
+  ],
+  "issues": []
+}
