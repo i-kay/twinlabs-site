@@ -4,6 +4,19 @@
 - 범위: 랜딩페이지, 지원 페이지, 개인정보처리방침, 앱 스토어 연결
 - 대상 앱: 채권온도 iOS/Android 1.0.x
 
+## 2026-10-27 다운로드 링크 갱신
+
+아래 2026-10-05 점검은 당시 기록이다. 스토어 상태와 랜딩페이지 CTA에 대해서는 이번 확인 결과를 우선한다. 지원·개인정보처리방침의 기존 지적 사항은 이번 변경 범위에 포함하지 않았다.
+
+- App Store 전체 URL과 Google Play 일반 공개 URL 모두 HTTP 200이며 채권온도 상세 페이지임을 확인했다.
+- Apple lookup API의 앱 ID `6814157574`는 번들 ID `studio.twinlabs.bondtemperature`와 일치한다.
+- Android 패키지 `studio.twinlabs.bondtemperature`의 Google Play 공개 상세 페이지를 확인했다. 아래 과거의 Alpha 비공개 테스트 상태는 현재 상태가 아니다.
+- `bond-temperature/index.html` 상단·하단에 두 스토어 다운로드 버튼을 제공하고 출시 준비 문구와 출시 알림 이메일 연결을 제거했다.
+- Chrome에서 360·390·1440px 화면의 버튼 4개, 이미지 로드 및 가로 넘침 없음을 검증했다.
+- 기존 GitHub Actions `pages build and deployment` 성공 기록의 대상 브랜치는 `main`이다. 배포 시 변경을 main에 병합·push하고, 해당 커밋의 Actions 성공 및 공개 HTML 일치를 확인한다.
+
+확인 출처: [App Store](https://apps.apple.com/kr/app/%EC%B1%84%EA%B6%8C%EC%98%A8%EB%8F%84-%EC%B1%84%EA%B6%8C-%EA%B3%84%EC%82%B0%EA%B8%B0/id6814157574), [Apple lookup](https://itunes.apple.com/lookup?id=6814157574&country=kr), [Google Play](https://play.google.com/store/apps/details?id=studio.twinlabs.bondtemperature), [GitHub Actions](https://github.com/i-kay/twinlabs-site/actions).
+
 ## 결론
 
 세 공개 페이지는 정상적으로 서비스되고 기본 링크도 대체로 유효하다. 다만 iOS 앱이 이미 App Store에 공개되었는데 랜딩페이지가 여전히 출시 준비 중 이메일 링크를 보여 주므로 즉시 수정해야 한다. 지원 페이지와 개인정보처리방침에도 1.0.2 구현 및 실제 광고·분석 동작을 반영할 문구 수정이 필요하다.
