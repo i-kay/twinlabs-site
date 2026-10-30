@@ -1,7 +1,16 @@
 # 맘마두리 웹 미리보기·공개 절차
 
 ## 현재 상태
-2026-10-05: 소개·지원·개인정보 검토본 구현. 공개 배포하지 않았다. 모든 새 페이지에 `noindex`를 두었으며 스토어 링크는 출시 준비 상태다. 기존 Debt Freedom 및 다른 앱 페이지는 변경하지 않았다. TwinLabs 루트에는 맘마두리 카드만 추가했다.
+2026-10-31: iOS 출시 후 소개 페이지 상단·하단, 지원 FAQ, TwinLabs 루트 앱 카드에 [공식 App Store 다운로드](https://apps.apple.com/kr/app/id6822993435)를 연결했다. Apple 공개 조회 API에서 앱 이름과 번들 ID `studio.twinlabs.mammaduri`가 일치함을 확인했다. Android는 출시 준비 안내를 유지한다.
+
+배포 저장소는 `i-kay/twinlabs-site`, 배포 브랜치는 `main`이며 정적 파일은 저장소 루트에 있다. `CNAME`은 `twinlabs.studio`다. GitHub Actions의 `pages build and deployment` 실행에서 대상 커밋의 build/deploy 성공을 확인하고, 공개 URL의 HTML에 다운로드 링크가 반영되었는지 확인한다. gh 인증 없이도 공개 Actions API는 조회할 수 있지만 Pages 설정 API는 404를 반환할 수 있다.
+
+```sh
+curl -fsSL 'https://api.github.com/repos/i-kay/twinlabs-site/actions/runs?per_page=5'
+curl -fsSL https://twinlabs.studio/mammaduri/
+```
+
+기존 검색 노출 설정과 개인정보 정책은 이번 다운로드 링크 변경 범위에 포함하지 않았다. 아래 공개 전 운영 확인 항목은 최초 공개 당시의 체크리스트이며 각 항목의 완료 여부를 뜻하지 않는다.
 
 ## 미리보기
 저장소 루트에서 실행:
@@ -25,6 +34,8 @@ NODE_PATH=/tmp/mammaduri-web-qa/node_modules node tools/check-mammaduri.cjs
 결과는 `docs/verification/mammaduri-check.json`, 화면은 같은 디렉터리의 PNG다. Chrome 경로는 다른 운영체제에서 수정한다. HTML 문법·접근성, 내부 링크/앵커, 이미지 로드, 가로 넘침 및 첫 키보드 포커스를 확인한다. HTML 형식 규칙은 Prettier 기본 출력에 맞춘다. 자동 검사는 법률 검토나 모든 보조공학 사용자 검증을 대신하지 않는다.
 
 ## 이번 검증
+- 2026-10-31 재검증: 맘마두리 3개 페이지 × 360/390/1440px에서 HTML·axe·내부 링크·이미지·가로 넘침 검사 통과. 소개 페이지 모바일·데스크톱 다운로드 CTA 시각 확인.
+- TwinLabs 루트는 같은 세 너비에서 다운로드 링크와 가로 넘침을 확인했다. axe의 `landmark-one-main`, `region` 경고는 수정 전 HEAD에도 동일하게 존재하며 별도 후속 작업으로 남겼다.
 - 3개 페이지 × 360/390/1440px에서 렌더링, HTML 검사와 axe 검사.
 - 모바일·데스크톱 캡처에서 배치·문구·버튼·문서 읽기 흐름 점검.
 - 내부 링크/앵커 정상, 이미지 누락 및 가로 넘침 없음.
