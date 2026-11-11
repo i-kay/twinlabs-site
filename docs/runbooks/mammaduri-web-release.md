@@ -55,3 +55,15 @@ NODE_PATH=/tmp/mammaduri-web-qa/node_modules node tools/check-mammaduri.cjs
 
 ## 수정·회수
 정적 HTML/CSS와 `mammaduri/assets/icon.png`가 배포 대상이다. 문제가 생기면 해당 변경 커밋만 되돌려 재배포한다. 앱 또는 Firebase 데이터는 이 웹 배포에 포함되지 않는다.
+
+## 2026-11-12 검색 공개와 등록
+
+소개·지원의 noindex를 해제하고 canonical·공유 메타·JSON-LD, `/robots.txt`와 `/sitemap.xml`을 추가했다. 두 스토어 다운로드를 제공한다. 정책 페이지는 기존 noindex를 유지한다. 사이트맵은 사이트 전체 페이지 목록을 의미하지 않는다.
+
+배포 후 canonical 대표 URL의 200 응답, X-Robots-Tag 차단 유무, JSON-LD 파싱과 본문 일치를 확인한다. `/mammaduri/index.html`의 canonical은 `/mammaduri/`다. 변경 시 사이트맵과 공유 URL도 같이 확인한다.
+
+검색 계정 등록은 별도 소유권 확인이 필요하다. 현재 저장소에 해당 서비스의 소유권 검증 증거가 없어 등록 완료로 보고하지 않는다.
+1. https://search.google.com/search-console 에서 `twinlabs.studio` 속성의 소유권/접근 권한을 확인한다. 도메인 속성은 안내된 DNS TXT를 도메인 관리에서 추가하거나, URL 접두어 속성의 제공 검증 방식을 사용한다.
+2. 사이트맵 `https://twinlabs.studio/sitemap.xml`을 제출하고 소개·지원 URL 검사에서 수집 가능 여부와 canonical을 확인한 뒤 색인을 요청한다.
+3. https://searchadvisor.naver.com/ 에서 동일 도메인 소유권을 확인하고 사이트맵을 제출한다. 제공받지 않은 검증 토큰은 임의로 만들지 않는다.
+4. 이후 색인·노출·클릭 상태를 관찰한다. 배포 성공은 검색 색인이나 AI 인용 완료를 의미하지 않는다.

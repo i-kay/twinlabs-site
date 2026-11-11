@@ -3,15 +3,72 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="robots" content="noindex" />
+    <meta name="robots" content="index,follow" />
     <meta
       name="description"
-      content="내일의 식단을 계획하고, 아이별 식사 기록을 남기고, 가족과 함께 챙기는 유아식 식단 앱."
+      content="유아식·이유식 메뉴와 오전·오후 간식을 계획하고, 아이별 식사 반응과 메뉴 준비 메모를 가족과 함께 기록해요. iPhone·Android 무료 다운로드."
     />
     <meta name="theme-color" content="#fff9f4" />
-    <title>아이의 한 끼, 함께하는 하루 · 맘마두리</title>
+    <title>맘마두리 · 유아식 식단 관리와 아이별 식사 기록</title>
     <link rel="icon" href="assets/icon.png" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="canonical" href="https://twinlabs.studio/mammaduri/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="맘마두리" />
+    <meta
+      property="og:title"
+      content="맘마두리 · 유아식 식단 관리와 아이별 식사 기록"
+    />
+    <meta
+      property="og:description"
+      content="유아식·이유식 메뉴와 오전·오후 간식을 계획하고, 아이별 식사 반응과 메뉴 준비 메모를 가족과 함께 기록해요. iPhone·Android 무료 다운로드."
+    />
+    <meta property="og:url" content="https://twinlabs.studio/mammaduri/" />
+    <meta
+      property="og:image"
+      content="https://twinlabs.studio/mammaduri/assets/icon.png"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="맘마두리 · 유아식 식단 관리와 아이별 식사 기록"
+    />
+    <meta
+      name="twitter:description"
+      content="유아식·이유식 메뉴와 오전·오후 간식을 계획하고, 아이별 식사 반응과 메뉴 준비 메모를 가족과 함께 기록해요. iPhone·Android 무료 다운로드."
+    />
+    <meta
+      name="twitter:image"
+      content="https://twinlabs.studio/mammaduri/assets/icon.png"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "맘마두리 · 유아식 식단 관리와 아이별 식사 기록",
+        "description": "유아식·이유식 메뉴와 오전·오후 간식을 계획하고, 아이별 식사 반응과 메뉴 준비 메모를 가족과 함께 기록해요. iPhone·Android 무료 다운로드.",
+        "url": "https://twinlabs.studio/mammaduri/",
+        "inLanguage": "ko-KR",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TwinLabs",
+          "url": "https://twinlabs.studio/"
+        },
+        "about": {
+          "@type": "MobileApplication",
+          "name": "맘마두리",
+          "operatingSystem": "iOS, Android",
+          "applicationCategory": "LifestyleApplication",
+          "url": "https://twinlabs.studio/mammaduri/",
+          "isAccessibleForFree": true,
+          "installUrl": [
+            "https://apps.apple.com/kr/app/id6822993435",
+            "https://play.google.com/store/apps/details?id=studio.twinlabs.mammaduri"
+          ]
+        }
+      }
+    </script>
   </head>
   <body>
     <a class="skip" href="#main">본문으로 건너뛰기</a>
@@ -30,12 +87,22 @@
             <div class="eyebrow">Little meals, lovely days</div>
             <h1>내일 뭐 먹이지?<br /><span>조금 더 가볍게.</span></h1>
             <p class="lead">
-              생각날 때 적어 두는 내일의 식단.<br />아이마다 남기는 오늘의 한
-              입.<br />맘마두리로 우리 집 식사를 함께 챙겨요.
+              유아식 식단을 계획하고 아이별 식사 반응을 기록하는 앱,
+              맘마두리.<br />쌍둥이도 형제자매도, 우리 집 한 끼를 가족과 함께
+              챙겨요.
             </p>
             <div class="actions">
-              <a class="button" href="https://apps.apple.com/kr/app/id6822993435">App Store에서 다운로드</a
-              ><a class="button" href="https://play.google.com/store/apps/details?id=studio.twinlabs.mammaduri">Google Play에서 다운로드</a><a class="button secondary" href="#features">맘마두리 둘러보기</a>
+              <a
+                class="button"
+                href="https://apps.apple.com/kr/app/id6822993435"
+                >App Store에서 다운로드</a
+              ><a
+                class="button"
+                href="https://play.google.com/store/apps/details?id=studio.twinlabs.mammaduri"
+                >Google Play에서 다운로드</a
+              ><a class="button secondary" href="#features"
+                >맘마두리 둘러보기</a
+              >
             </div>
             <p class="fine">iOS · Android 다운로드 가능</p>
           </div>
@@ -103,16 +170,16 @@
               <span class="number">01 / 계획</span>
               <h3>내일의 메뉴를 미리</h3>
               <p>
-                날짜와 끼니별로 메뉴를 적고, 함께 먹을 아이를 선택해요. 최근
-                메뉴를 참고하면 다음 식단도 한결 편해져요.
+                아침·점심·저녁 메뉴를 쉼표로 나눠 한 번에 입력해요. 함께 먹을
+                아이를 고르고, 주간 식단에서 한 주의 계획을 확인해요.
               </p>
             </article>
             <article class="card">
               <span class="number">02 / 기록</span>
               <h3>같이 먹어도, 기록은 따로</h3>
               <p>
-                먹은 정도와 반응을 아이마다 남겨요. 쌍둥이도 형제자매도, 지난
-                식사 기록을 보며 다음 한 끼를 준비해요.
+                같은 메뉴를 먹어도 먹은 정도와 반응은 아이마다 남겨요. 선택한
+                반응에 자유로운 메모를 더해 다음 식사를 준비할 때 참고해요.
               </p>
             </article>
             <article class="card">
@@ -121,6 +188,30 @@
               <p>
                 로그인하고 가족을 연결하면 식단과 기록을 함께 볼 수 있어요.
                 엄마, 아빠, 함께 돌보는 가족까지요.
+              </p>
+            </article>
+            <article class="card">
+              <span class="number">04 / 간식</span>
+              <h3>간식도 먹는 순서대로</h3>
+              <p>
+                아침과 점심 사이에는 오전 간식, 점심과 저녁 사이에는 오후 간식을
+                적어요. 끼니와 간식을 하루의 흐름으로 확인해요.
+              </p>
+            </article>
+            <article class="card">
+              <span class="number">05 / 준비 메모</span>
+              <h3>같은 메뉴의 준비법을 함께</h3>
+              <p>
+                내 메뉴에 연결한 공통 준비 메모는 여러 식단에서 함께 보고
+                수정해요. 그날만 필요한 내용은 이번 식단 메모로 따로 남겨요.
+              </p>
+            </article>
+            <article class="card">
+              <span class="number">06 / 날짜 이동</span>
+              <h3>어제부터 다음 한 끼까지</h3>
+              <p>
+                하루 식단을 좌우로 넘기거나 달력에서 날짜를 골라요. 다른 날짜를
+                보고 있다면 ‘오늘로’ 돌아올 수 있어요.
               </p>
             </article>
           </div>
@@ -150,6 +241,49 @@
           </p>
           <a href="privacy-policy.html">개인정보 안내 읽기 →</a>
         </section>
+        <section class="section" id="faq">
+          <div class="eyebrow">Questions, answered</div>
+          <h2>맘마두리, 이런 점이 궁금해요.</h2>
+          <details>
+            <summary>이유식 기록에도 사용할 수 있나요?</summary>
+            <p>
+              이유식 메뉴도 식단에 적고 아이의 식사 반응을 남길 수 있어요.
+              월령별 이유식 단계 추천이나 영양 진단을 제공하는 앱은 아니에요.
+            </p>
+          </details>
+          <details>
+            <summary>쌍둥이나 여러 아이의 식단을 관리할 수 있나요?</summary>
+            <p>
+              아이를 각각 등록하고 한 끼를 함께 먹을 아이를 선택할 수 있어요.
+              같은 메뉴에도 먹은 정도와 반응은 아이별로 기록해요.
+            </p>
+          </details>
+          <details>
+            <summary>로그인 없이 시작할 수 있나요?</summary>
+            <p>
+              네. 게스트로 시작하면 기록은 이 기기에 저장돼요. 가족과 공유하려면
+              로그인하고 가족을 연결해 주세요.
+            </p>
+          </details>
+          <details>
+            <summary>부부가 iPhone과 Android에서 함께 쓸 수 있나요?</summary>
+            <p>
+              네. 각자 로그인하고 같은 가족에 참여하면 식단과 기록을 함께 볼 수
+              있어요. Android는 카카오·Google·이메일, iOS는 Apple 로그인도
+              지원해요.
+            </p>
+          </details>
+          <details>
+            <summary>이용 요금이 있나요?</summary>
+            <p>
+              무료로 다운로드하고 사용할 수 있으며 앱 안에 배너 광고가 있어요.
+              유료 결제는 없어요.
+            </p>
+          </details>
+          <p>
+            <a href="support.html">로그인·가족 공유·데이터 보관 도움말 →</a>
+          </p>
+        </section>
         <section class="release" id="release">
           <img
             src="assets/icon.png"
@@ -159,14 +293,22 @@
           />
           <h2>따뜻한 한 끼, 오늘부터 함께해요.</h2>
           <p>
-            맘마두리를 App Store와 Google Play에서 만나보세요.<br />아이의 식단과 식사 기록을
-            가족과 함께 챙겨요.
+            맘마두리를 App Store와 Google Play에서 만나보세요.<br />아이의
+            식단과 식사 기록을 가족과 함께 챙겨요.
           </p>
           <span class="pill">iOS · Android 다운로드 가능</span>
           <div class="actions">
-            <a class="button" href="https://apps.apple.com/kr/app/id6822993435">App Store에서 다운로드</a>
-            <a class="button" href="https://play.google.com/store/apps/details?id=studio.twinlabs.mammaduri">Google Play에서 다운로드</a>
-            <a class="button secondary" href="support.html">궁금한 점 문의하기</a>
+            <a class="button" href="https://apps.apple.com/kr/app/id6822993435"
+              >App Store에서 다운로드</a
+            >
+            <a
+              class="button"
+              href="https://play.google.com/store/apps/details?id=studio.twinlabs.mammaduri"
+              >Google Play에서 다운로드</a
+            >
+            <a class="button secondary" href="support.html"
+              >궁금한 점 문의하기</a
+            >
           </div>
         </section>
       </div>
