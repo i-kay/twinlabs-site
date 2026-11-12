@@ -21,6 +21,7 @@
 
 - `tools/check-debt-freedom.cjs`: Playwright, axe-core, html-validate 사용. `NODE_PATH=/tmp/debt-site-qa/node_modules node tools/check-debt-freedom.cjs` (저장소 루트 실행). 필요한 모듈은 별도 QA 디렉터리에 설치했으며 제품 의존성을 추가하지 않았다.
 - 루트·소개·지원·정책 × 360/390/1440px, HTML, axe, 가로 넘침, 이미지, 스킵 링크, FAQ Enter/Space 열기·닫기, 전체 FAQ 확장 시 접근성·넘침 검사. 내부 링크와 앵커, 고유 메타, canonical/OG/Twitter/JSON-LD URL, 공유 이미지, 두 스토어 링크, 사이트맵 모든 URL의 index/canonical 정합성 검사.
+- 동일 검사를 공개 배포 URL을 대상으로 다시 실행해 12개 화면·내부 링크 20개·전체 사이트맵에서 문제 0개를 확인했다.
 - 결과·스크린샷은 `docs/verification/debt-freedom-*`. 출시 후 공개 응답은 별도 결과로 남긴다.
 
 ## 검색 관리 계정 후속
@@ -32,4 +33,7 @@
 
 ## 운영 확인
 
-배포 커밋과 공개 HTTP·응답 본문·X-Robots-Tag·다운로드·robots·sitemap 및 Google 작업 결과는 배포 후 기록한다.
+- 구현/배포 커밋: `5183ebe7894b2051ae3eff528846e55f0ea57347`, origin/main 푸시 완료.
+- GitHub Pages 실행 [43189335783](https://github.com/i-kay/twinlabs-site/actions/runs/43189335783) completed/success, 동일 head_sha 확인.
+- 공개 URL 15개 HTTP 200, X-Robots-Tag 없음, 본문/이미지/robots/sitemap SHA-256 로컬과 모두 일치. `docs/verification/debt-freedom-public.json` 참조. App Store/Google Play 공식 다운로드 목적지 각각 HTTP 200.
+- Google Search Console에서 HTML 태그 방식 **소유권이 확인됨**을 실제 확인했다. 검증 메타태그는 유지한다. 사이트맵 제출 성공 후 상세에서 **사이트맵 처리 완료**, 발견된 페이지 **7개**, 2026-11-12 마지막 읽음을 확인했다. 최초 목록의 일시적 가져올 수 없음은 상세 처리 완료로 해소되었다. 소개 URL 검사에서는 기존 **URL이 Google에 등록되어 있음 / 페이지 색인이 생성됨**이 표시되었다. 변경 반영을 위한 색인 생성 요청을 실행하고 **색인 생성 요청됨 / 우선순위 크롤링 대기열 추가**를 확인했다. 이 요청은 새 본문의 재색인 완료를 의미하지 않는다. 지원 URL도 기존 **URL이 Google에 등록되어 있음 / 페이지 색인이 생성됨** 상태였다. 새 본문 반영 요청 후 **색인 생성 요청됨 / 우선순위 크롤링 대기열 추가**를 확인했다. 두 URL 모두 요청 접수 완료이며 새 본문의 실제 재색인 완료는 확인하지 않았다.

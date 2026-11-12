@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-11-12T09:13:01.721Z",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/debt-freedom/",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/debt-freedom/index.html",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/debt-freedom/support.html",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/debt-freedom/privacy-policy.html",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/debt-freedom/assets/screenshot-debt-free-date.png",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/debt-freedom/assets/screenshot-priority.png",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/debt-freedom/assets/screenshot-add-debt.png",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/debt-freedom/assets/app-store-badge-ko.svg",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/debt-freedom/assets/google-play-badge-ko.png",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/debt-freedom/assets/app-icon.png",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/debt-freedom/assets/social.png",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/assets/social.png",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "xRobotsTag": [],
+      "contentMatches": true
+    }
+  ]
+}
