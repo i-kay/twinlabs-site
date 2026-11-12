@@ -1,136 +1,240 @@
 <!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="TwinLabs — 모바일 앱 스튜디오. 앱 지원 및 정책 페이지 안내." />
-  <title>TwinLabs</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-    }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
-      line-height: 1.7;
-      background: #f7f7f8;
-      color: #1f2937;
-    }
-    .wrap {
-      max-width: 760px;
-      margin: 40px auto;
-      padding: 0 24px 48px;
-    }
-    .hero {
-      padding: 32px 24px;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
-    }
-    h1 {
-      margin: 0 0 12px;
-      font-size: 1.75rem;
-      line-height: 1.25;
-    }
-    .lead {
-      margin: 0;
-      color: #4b5563;
-      font-size: 1.05rem;
-    }
-    h2 {
-      margin: 36px 0 14px;
-      font-size: 1.15rem;
-    }
-    .apps {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .app-card {
-      padding: 22px 24px;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
-    }
-    .app-card h3 {
-      margin: 0 0 8px;
-      font-size: 1.1rem;
-    }
-    .app-card p {
-      margin: 0 0 14px;
-      color: #4b5563;
-      font-size: 0.98rem;
-    }
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 16px;
-      font-size: 0.95rem;
-    }
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .contact {
-      margin-top: 32px;
-      padding: 22px 24px;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
-      font-size: 0.98rem;
-      color: #4b5563;
-    }
-    .footer {
-      margin-top: 28px;
-      text-align: center;
-      color: #6b7280;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header class="hero">
-      <h1>TwinLabs</h1>
-      <p class="lead">
-        TwinLabs는 일상에 닿는 도구를 만드는 소규모 스튜디오입니다.
-      </p>
-    </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="TwinLabs — 모바일 앱 스튜디오. Real Yield, 맘마두리 등 앱 다운로드와 지원·정책 안내."
+    />
+    <title>TwinLabs | 일상에 닿는 모바일 앱</title>
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://twinlabs.studio/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TwinLabs | 일상에 닿는 모바일 앱" />
+    <meta
+      property="og:description"
+      content="Real Yield, 맘마두리 등 TwinLabs 앱을 만나고 다운로드·지원·정책 정보를 확인하세요."
+    />
+    <meta property="og:url" content="https://twinlabs.studio/" />
+    <meta
+      property="og:image"
+      content="https://twinlabs.studio/assets/social.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TwinLabs | 일상에 닿는 모바일 앱" />
+    <meta
+      name="twitter:description"
+      content="Real Yield, 맘마두리 등 TwinLabs 앱의 다운로드·지원·정책 안내."
+    />
+    <meta
+      name="twitter:image"
+      content="https://twinlabs.studio/assets/social.png"
+    />
+    <meta name="twitter:url" content="https://twinlabs.studio/" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "TwinLabs | 일상에 닿는 모바일 앱",
+        "url": "https://twinlabs.studio/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TwinLabs",
+          "email": "hello@twinlabs.studio"
+        }
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      body {
+        margin: 0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR",
+          sans-serif;
+        line-height: 1.7;
+        background: #f7f7f8;
+        color: #1f2937;
+      }
+      .wrap {
+        max-width: 760px;
+        margin: 40px auto;
+        padding: 0 24px 48px;
+      }
+      .hero {
+        padding: 32px 24px;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 1.75rem;
+        line-height: 1.25;
+      }
+      .lead {
+        margin: 0;
+        color: #4b5563;
+        font-size: 1.05rem;
+      }
+      h2 {
+        margin: 36px 0 14px;
+        font-size: 1.15rem;
+      }
+      .apps {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .app-card {
+        padding: 22px 24px;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+      }
+      .app-card h3 {
+        margin: 0 0 8px;
+        font-size: 1.1rem;
+      }
+      .app-card p {
+        margin: 0 0 14px;
+        color: #4b5563;
+        font-size: 0.98rem;
+      }
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        font-size: 0.95rem;
+      }
+      a {
+        color: #2563eb;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .contact {
+        margin-top: 32px;
+        padding: 22px 24px;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+        font-size: 0.98rem;
+        color: #4b5563;
+      }
+      .footer {
+        margin-top: 28px;
+        text-align: center;
+        color: #6b7280;
+        font-size: 0.9rem;
+      }
+      a:focus-visible {
+        outline: 3px solid #65509c;
+        outline-offset: 4px;
+      }
+      .links a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+      }
+      .skip {
+        position: absolute;
+        top: -100px;
+        background: white;
+        padding: 12px;
+      }
+      .skip:focus {
+        top: 12px;
+      }
+      .footer {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">본문으로 건너뛰기</a>
+    <div class="wrap">
+      <header class="hero">
+        <h1>TwinLabs</h1>
+        <p class="lead">
+          TwinLabs는 일상에 닿는 도구를 만드는 소규모 스튜디오입니다.
+        </p>
+      </header>
 
-    <h2>앱</h2>
-    <div class="apps">
-      <article class="app-card">
-        <h3>맘마두리</h3><p>아이의 식단을 계획하고 식사 기록을 가족과 함께 챙기는 앱입니다. App Store와 Google Play에서 만나보세요.</p>
-        <div class="links"><a href="https://apps.apple.com/kr/app/id6822993435">iOS 다운로드</a><a href="https://play.google.com/store/apps/details?id=studio.twinlabs.mammaduri">Android 다운로드</a><a href="/mammaduri/">앱 소개</a><a href="/mammaduri/privacy-policy.html">개인정보처리방침</a><a href="/mammaduri/support.html">지원</a></div>
-      </article>
-      <article class="app-card">
-        <h3>채권온도</h3>
-        <p>시장 신용스프레드를 확인하고 직접 계산한 채권을 저장·비교하는 도구입니다.</p>
-        <div class="links">
-          <a href="/bond-temperature/">앱 소개</a>
-          <a href="/bond-temperature/privacy-policy.html">개인정보처리방침</a>
-          <a href="/bond-temperature/support.html">지원</a>
+      <main id="main">
+        <h2>앱</h2>
+        <div class="apps">
+          <article class="app-card">
+            <h3>Real Yield · 부동산 수익률 계산기</h3>
+            <p>
+              월세 매물의 현금흐름과 자기자본 수익률을 계산하고 저장·비교하세요.
+              App Store와 Google Play에서 무료로 이용할 수 있습니다.
+            </p>
+            <div class="links">
+              <a href="https://apps.apple.com/kr/app/id6759360893"
+                >iOS 다운로드</a
+              ><a
+                href="https://play.google.com/store/apps/details?id=studio.twinlabs.realyield"
+                >Android 다운로드</a
+              ><a href="/real-yield/">앱 소개</a
+              ><a href="/real-yield/privacy-policy.html">개인정보처리방침</a
+              ><a href="/real-yield/support.html">지원·FAQ</a>
+            </div>
+          </article>
+          <article class="app-card">
+            <h3>맘마두리</h3>
+            <p>
+              아이의 식단을 계획하고 식사 기록을 가족과 함께 챙기는 앱입니다.
+              App Store와 Google Play에서 만나보세요.
+            </p>
+            <div class="links">
+              <a href="https://apps.apple.com/kr/app/id6822993435"
+                >iOS 다운로드</a
+              ><a
+                href="https://play.google.com/store/apps/details?id=studio.twinlabs.mammaduri"
+                >Android 다운로드</a
+              ><a href="/mammaduri/">앱 소개</a
+              ><a href="/mammaduri/privacy-policy.html">개인정보처리방침</a
+              ><a href="/mammaduri/support.html">지원</a>
+            </div>
+          </article>
+          <article class="app-card">
+            <h3>채권온도</h3>
+            <p>
+              시장 신용스프레드를 확인하고 직접 계산한 채권을 저장·비교하는
+              도구입니다.
+            </p>
+            <div class="links">
+              <a href="/bond-temperature/">앱 소개</a>
+              <a href="/bond-temperature/privacy-policy.html"
+                >개인정보처리방침</a
+              >
+              <a href="/bond-temperature/support.html">지원</a>
+            </div>
+          </article>
+          <article class="app-card">
+            <h3>집루틴</h3>
+            <p>잊기 쉬운 집안 관리를 차분하게 챙기는 로컬 우선 앱입니다.</p>
+            <div class="links">
+              <a href="/jiproutine/privacy-policy.html">개인정보처리방침</a>
+              <a
+                href="mailto:hello@twinlabs.studio?subject=%EC%A7%91%EC%B1%99%EA%B8%B0%EB%AF%B8%20%EB%AC%B8%EC%9D%98"
+                >문의하기</a
+              >
+            </div>
+          </article>
         </div>
-      </article>
-      <article class="app-card">
-        <h3>집루틴</h3>
-        <p>잊기 쉬운 집안 관리를 차분하게 챙기는 로컬 우선 앱입니다.</p>
-        <div class="links">
-          <a href="/jiproutine/privacy-policy.html">개인정보처리방침</a>
-          <a href="mailto:hello@twinlabs.studio?subject=%EC%A7%91%EC%B1%99%EA%B8%B0%EB%AF%B8%20%EB%AC%B8%EC%9D%98">문의하기</a>
-        </div>
-      </article>
-    </div>
+      </main>
+      <section class="contact" aria-label="문의">
+        <strong>문의</strong><br />
+        일반 문의:
+        <a href="mailto:hello@twinlabs.studio">hello@twinlabs.studio</a>
+      </section>
 
-    <div class="contact">
-      <strong>문의</strong><br />
-      일반 문의: <a href="mailto:hello@twinlabs.studio">hello@twinlabs.studio</a>
+      <footer class="footer">© 2026 TwinLabs</footer>
     </div>
-
-    <p class="footer">© 2026 TwinLabs</p>
-  </div>
-</body>
+  </body>
 </html>

@@ -1,0 +1,164 @@
+{
+  "base": "http://127.0.0.1:8766",
+  "report": [
+    {
+      "name": "root",
+      "width": 360,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/"
+    },
+    {
+      "name": "root",
+      "width": 390,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/"
+    },
+    {
+      "name": "root",
+      "width": 1440,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/"
+    },
+    {
+      "name": "index",
+      "width": 360,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 6,
+      "canonical": "https://twinlabs.studio/real-yield/"
+    },
+    {
+      "name": "index",
+      "width": 390,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 6,
+      "canonical": "https://twinlabs.studio/real-yield/"
+    },
+    {
+      "name": "index",
+      "width": 1440,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 6,
+      "canonical": "https://twinlabs.studio/real-yield/"
+    },
+    {
+      "name": "support",
+      "width": 360,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 6,
+      "canonical": "https://twinlabs.studio/real-yield/support.html"
+    },
+    {
+      "name": "support",
+      "width": 390,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 6,
+      "canonical": "https://twinlabs.studio/real-yield/support.html"
+    },
+    {
+      "name": "support",
+      "width": 1440,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 6,
+      "canonical": "https://twinlabs.studio/real-yield/support.html"
+    },
+    {
+      "name": "privacy-policy",
+      "width": 360,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/real-yield/privacy-policy.html"
+    },
+    {
+      "name": "privacy-policy",
+      "width": 390,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/real-yield/privacy-policy.html"
+    },
+    {
+      "name": "privacy-policy",
+      "width": 1440,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/real-yield/privacy-policy.html"
+    },
+    {
+      "name": "disclaimer",
+      "width": 360,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/real-yield/disclaimer.html"
+    },
+    {
+      "name": "disclaimer",
+      "width": 390,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/real-yield/disclaimer.html"
+    },
+    {
+      "name": "disclaimer",
+      "width": 1440,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/real-yield/disclaimer.html"
+    }
+  ],
+  "checkedInternalLinks": 19,
+  "sitemap": [
+    "https://twinlabs.studio/",
+    "https://twinlabs.studio/mammaduri/",
+    "https://twinlabs.studio/mammaduri/support.html",
+    "https://twinlabs.studio/real-yield/",
+    "https://twinlabs.studio/real-yield/support.html"
+  ],
+  "issues": []
+}
