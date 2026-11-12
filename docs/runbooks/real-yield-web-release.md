@@ -44,3 +44,12 @@
 ## 배포 확인
 
 콘텐츠 커밋을 main에 push 후 GitHub Pages Actions와 공개 응답을 확인하고 아래에 결과를 기록한다.
+
+### 공개 검증 완료
+
+- 콘텐츠 배포 커밋: 3dfe97df569a3f99bf6ed595dcfdecca5785a3ea (main push 완료).
+- GitHub Pages [실행 43187840932](https://github.com/i-kay/twinlabs-site/actions/runs/43187840932): completed / success.
+- 공개 URL 13개(루트, 소개 대표/별칭, 지원, 정책·면책, CSS, 이미지 4개, robots.txt, sitemap.xml)의 HTTP 200을 확인했다. X-Robots-Tag는 없었고 공개 응답 본문 SHA-256이 로컬 검증 파일과 모두 일치했다. 따라서 새 본문, 다운로드 링크, canonical/공유/JSON-LD와 사이트맵이 그대로 배포되었음을 확인했다. 정책·면책의 HTML noindex는 의도된 설정이다.
+- 공개 검증 원본: docs/verification/real-yield-public.json. 재검증: node tools/check-real-yield-public.cjs (curl 필요).
+- 이 보고서와 공개 검증 증거를 기록하는 후속 커밋은 사이트 콘텐츠를 바꾸지 않는다.
+- 남은 작업: Search Console·네이버 기존 등록/권한 확인 및 소유권 검증, 사이트맵 제출·URL 검사·수집/색인 요청. 검색 색인 및 AI 인용은 배포와 별개이며 보장하지 않는다.
