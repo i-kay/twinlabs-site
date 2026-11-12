@@ -1,0 +1,136 @@
+{
+  "base": "http://127.0.0.1:8767",
+  "report": [
+    {
+      "name": "root",
+      "width": 360,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/"
+    },
+    {
+      "name": "root",
+      "width": 390,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/"
+    },
+    {
+      "name": "root",
+      "width": 1440,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/"
+    },
+    {
+      "name": "index",
+      "width": 360,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 6,
+      "canonical": "https://twinlabs.studio/debt-freedom/"
+    },
+    {
+      "name": "index",
+      "width": 390,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 6,
+      "canonical": "https://twinlabs.studio/debt-freedom/"
+    },
+    {
+      "name": "index",
+      "width": 1440,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 6,
+      "canonical": "https://twinlabs.studio/debt-freedom/"
+    },
+    {
+      "name": "support",
+      "width": 360,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 6,
+      "canonical": "https://twinlabs.studio/debt-freedom/support.html"
+    },
+    {
+      "name": "support",
+      "width": 390,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 6,
+      "canonical": "https://twinlabs.studio/debt-freedom/support.html"
+    },
+    {
+      "name": "support",
+      "width": 1440,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 6,
+      "canonical": "https://twinlabs.studio/debt-freedom/support.html"
+    },
+    {
+      "name": "privacy-policy",
+      "width": 360,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/debt-freedom/privacy-policy.html"
+    },
+    {
+      "name": "privacy-policy",
+      "width": 390,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/debt-freedom/privacy-policy.html"
+    },
+    {
+      "name": "privacy-policy",
+      "width": 1440,
+      "axeViolations": 0,
+      "expandedFaqViolations": 0,
+      "overflow": false,
+      "images": [],
+      "keyboardFaqs": 0,
+      "canonical": "https://twinlabs.studio/debt-freedom/privacy-policy.html"
+    }
+  ],
+  "checkedInternalLinks": 20,
+  "sitemap": [
+    "https://twinlabs.studio/",
+    "https://twinlabs.studio/mammaduri/",
+    "https://twinlabs.studio/mammaduri/support.html",
+    "https://twinlabs.studio/real-yield/",
+    "https://twinlabs.studio/real-yield/support.html",
+    "https://twinlabs.studio/debt-freedom/",
+    "https://twinlabs.studio/debt-freedom/support.html"
+  ],
+  "issues": []
+}
